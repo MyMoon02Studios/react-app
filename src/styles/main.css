@@ -1,0 +1,69 @@
+* { box-sizing: border-box; margin: 0; padding: 0; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; }
+html, body, #root { height: 100%; }
+.app-root { display: flex; height: 100vh; color: #333; background-color: #f8f9fa; overflow: hidden; }
+.main-content { flex: 1; padding: 25px; overflow-y: auto; background-color: #f0f2f5; }
+
+/* content */
+.content-section { background-color: white; border-radius: 12px; padding: 22px; margin-bottom: 20px; box-shadow: 0 3px 10px rgba(0,0,0,0.05); }
+.section-title { font-size: 19px; font-weight: 700; margin-bottom: 18px; color: #ff4d8d; display:flex; align-items:center; }
+.profile-card { display:flex; align-items:center; gap:18px; padding:18px; border-radius:10px; background: linear-gradient(135deg,#fff5f8,#ffeef3); margin-bottom:18px; border:1px solid #ffd6e0; }
+.profile-avatar { width:65px; height:65px; border-radius:50%; background: linear-gradient(135deg,#ff6b9d,#ff4d8d); display:flex; align-items:center; justify-content:center; color:white; font-weight:bold; font-size:26px; box-shadow:0 3px 8px rgba(255,107,157,0.3); overflow:hidden; }
+.profile-name { font-weight:700; margin-bottom:6px; font-size:17px; cursor:pointer; display:flex; align-items:center; }
+.profile-status { font-size:13px; color:#666; display:flex; align-items:center; }
+.status-indicator { width:8px; height:8px; border-radius:50%; background-color:#4CAF50; margin-right:8px; }
+
+/* helpers */
+.btn { padding:10px 20px; border:none; border-radius:8px; font-weight:600; cursor:pointer; }
+.btn-primary { background-color:#ff4d8d; color:white; }
+.btn-secondary { background-color:#f0f0f0; color:#555; }
+
+.form-input { width:100%; padding:12px; border:1px solid #ddd; border-radius:8px; font-size:15px; }
+.form-input:focus { border-color:#ff4d8d; outline:none; }
+
+/* responsive */
+@media (max-width: 768px) {
+  .app-root { flex-direction: column; }
+}
+
+.sidebar { width: 220px; background: linear-gradient(135deg, #ff6b9d, #ff4d8d); display:flex; flex-direction:column; padding:25px 15px; box-shadow:2px 0 15px rgba(0,0,0,0.1); z-index:100; }
+.sidebar-header { text-align:center; margin-bottom:30px; color:white; }
+.app-title { font-size:22px; font-weight:700; margin-bottom:5px; }
+.app-subtitle { font-size:13px; opacity:0.9; }
+.sidebar-avatar { width:80px; height:80px; border-radius:50%; background:linear-gradient(135deg,#ffffff,#f0f0f0); display:flex; align-items:center; justify-content:center; margin:0 auto 25px auto; border:3px solid white; box-shadow:0 4px 12px rgba(0,0,0,0.15); overflow:hidden; position:relative; cursor:pointer; }
+.sidebar-avatar-img { width:100%; height:100%; object-fit:cover; border-radius:50%; }
+.avatar-placeholder { width:100%; height:100%; border-radius:50%; background: linear-gradient(135deg,#ff6b9d,#ff4d8d); display:flex; align-items:center; justify-content:center; color:white; font-weight:bold; font-size:28px; }
+
+.nav-container { display:flex; flex-direction:column; gap:12px; flex:1; }
+.nav-btn { display:flex; align-items:center; padding:14px 16px; border-radius:10px; background-color: rgba(255,255,255,0.1); color:white; font-size:15px; text-decoration:none; position:relative; }
+.nav-btn:hover { background-color: rgba(255,255,255,0.2); transform: translateX(3px); }
+.nav-btn.active { background-color:white; color:#ff4d8d; box-shadow:0 3px 8px rgba(0,0,0,0.15); }
+.nav-icon { font-size:18px; margin-right:12px; width:20px; text-align:center; }
+.nav-text { font-weight:600; }
+
+.tooltip { position:absolute; left:100%; top:50%; transform: translateY(-50%); background-color:#333; color:white; padding:8px 12px; border-radius:6px; font-size:13px; white-space:nowrap; opacity:0; visibility:hidden; transition: all 0.3s ease; margin-left:10px; z-index:1000; box-shadow:0 3px 10px rgba(0,0,0,0.2); }
+.nav-btn:hover .tooltip { opacity:1; visibility:visible; margin-left:15px; }
+
+.sidebar-footer { margin-top:auto; padding-top:20px; border-top:1px solid rgba(255,255,255,0.2); color:white; text-align:center; font-size:11px; opacity:0.8; }
+
+/* responsive */
+@media (max-width: 768px) {
+  .sidebar { width:100%; height:auto; padding:15px; }
+  .nav-container { flex-direction:row; flex-wrap:wrap; justify-content:center; gap:8px; }
+  .nav-btn { flex:1; min-width:110px; justify-content:center; padding:12px; }
+  .tooltip { display:none; }
+}
+
+.chat-list { display:flex; flex-direction:column; gap:10px; }
+.chat-item { display:flex; align-items:center; padding:14px; border-radius:10px; cursor:pointer; transition: all .2s; border:1px solid transparent; background: transparent; }
+.chat-item:hover { background-color:#f8f8f8; border-color:#ffd6e0; transform: translateY(-1px); }
+.chat-avatar { width:48px; height:48px; border-radius:50%; background: linear-gradient(135deg,#ffb6c1,#ff8fa3); display:flex; align-items:center; justify-content:center; color:white; font-weight:bold; margin-right:14px; box-shadow:0 2px 6px rgba(0,0,0,0.1); overflow:hidden; }
+.chat-info { flex:1; }
+.chat-name { font-weight:600; margin-bottom:4px; display:flex; align-items:center; justify-content:space-between; }
+.chat-time { font-size:11px; color:#999; font-weight:normal; }
+.chat-preview { font-size:13px; color:#777; white-space:nowrap; overflow:hidden; text-overflow:ellipsis; }
+
+.setting-item { display:flex; align-items:center; padding:14px; border-radius:8px; cursor:pointer; transition: all .2s; border:1px solid #f0f0f0; position:relative; background:white; }
+.setting-icon { width:42px; height:42px; border-radius:50%; background-color:#fff5f8; display:flex; align-items:center; justify-content:center; margin-right:14px; color:#ff4d8d; font-size:17px; }
+.setting-info { flex:1; }
+.setting-title { font-weight:600; margin-bottom:4px; font-size:15px; }
+.setting-desc { font-size:12px; color:#777; }
