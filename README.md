@@ -1,2 +1,2 @@
-git# react-app
+# react-app
 Una app de react para el chat web
