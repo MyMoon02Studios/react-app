@@ -27,7 +27,8 @@ export default defineConfig(({ mode }) => {
     server: {
       host,
       port,
-      open: true
+      open: true,
+      allowedHosts: ['react-app-yg5h.onrender.com']
     }
   }
 })
