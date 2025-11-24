@@ -157,7 +157,7 @@ export default function Profile() {
                 className="form-input" 
                 value={value} 
                 onChange={e=>setValue(e.target.value)}
-                placeholder="Tu nombre completo"
+                placeholder="nombre"
               />
             </div>
 
@@ -175,7 +175,7 @@ export default function Profile() {
                 type="email"
                 value={email} 
                 onChange={e=>setEmail(e.target.value)}
-                placeholder="tu@email.com"
+                placeholder="ejemplo@email.com
               />
             </div>
 
@@ -193,7 +193,7 @@ export default function Profile() {
                 type="tel"
                 value={phone} 
                 onChange={e=>setPhone(e.target.value)}
-                placeholder="+34 600 000 000"
+                placeholder="+00 000000000"
               />
             </div>
 
@@ -221,10 +221,10 @@ export default function Profile() {
                 className="btn btn-primary"
                 onClick={() => {
                   save()
-                  alert('✅ Información guardada correctamente!')
+                  alert('Información guardada')
                 }}
               >
-                💾 Guardar cambios
+                 Guardar cambios
               </button>
               <button 
                 className="btn btn-secondary"
