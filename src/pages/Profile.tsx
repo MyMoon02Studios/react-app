@@ -175,7 +175,7 @@ export default function Profile() {
                 type="email"
                 value={email} 
                 onChange={e=>setEmail(e.target.value)}
-                placeholder="ejemplo@email.com
+                placeholder="ejemplo@email.com"
               />
             </div>
 
