@@ -1,23 +1,24 @@
 import React, { useState } from "react";
 import { useUser } from "../hooks/useUserData";
 
-const initial = [
-  { id: 1, author: "Ana", text: "Hola, ¿cómo estás?" },
-  { id: 2, author: "Carlos", text: "Nos vemos mañana en la reunión." },
-  { id: 3, author: "María", text: "¿Viste el último mensaje?" },
-];
+// ENVs
 const apiKey = import.meta.env.VITE_API_KEY;
 
 export default function General() {
+  type Message = {
+    id: number;
+    author: string;
+    text: string;
+  };
   const user = useUser();
-  const [messages, setMessages] = useState(initial);
+  const [messages, setMessages] = useState<Message[]>([]); //! No borrar
   const [text, setText] = useState("");
 
   async function send() {
     if (!text.trim()) return;
     const next = { id: Date.now(), author: "Tú", text: text.trim() };
 
-    //Enviar mensaje a la API
+    // Enviar mensaje a la API
     try {
       const response = await fetch("http://localhost:3000/api/posts", {
         method: "POST",
