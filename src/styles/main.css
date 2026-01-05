@@ -57,7 +57,7 @@ body,
   border-radius: 10px;
   background: linear-gradient(135deg, #e0dfdf, #afb5cc);
   margin-bottom: 18px;
-  border: 1px solid #ffd6e0;
+  border: 1px solid #9e9e9e;
 }
 .profile-avatar {
   width: 65px;
@@ -70,7 +70,7 @@ body,
   color: white;
   font-weight: bold;
   font-size: 26px;
-  box-shadow: 0 3px 8px rgba(255, 107, 157, 0.3);
+  box-shadow: 0 3px 8px rgba(196, 195, 195, 0.3);
   overflow: hidden;
 }
 .profile-name {
@@ -299,7 +299,7 @@ body,
 }
 .chat-item:hover {
   background-color: #f8f8f8;
-  border-color: #ffd6e0;
+  border-color: #4d4d4d;
   transform: translateY(-1px);
 }
 .chat-avatar {
@@ -354,7 +354,7 @@ body,
   width: 42px;
   height: 42px;
   border-radius: 50%;
-  background-color: #fff5f8;
+  background-color: #c5c5c5;
   display: flex;
   align-items: center;
   justify-content: center;

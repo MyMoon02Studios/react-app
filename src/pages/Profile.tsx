@@ -136,11 +136,11 @@ export default function Profile() {
           <div style={{
             marginTop: '15px',
             padding: '20px',
-            background: '#fff5f8',
+            background: '#eeeeeeff',
             borderRadius: '10px',
-            border: '1px solid #ffd6e0'
+            border: '1px solid #b9b9b9ff'
           }}>
-            <h3 style={{ marginBottom: '15px', color: '#ff4d8d' }}>
+            <h3 style={{ marginBottom: '15px', color: '#0e0d0dff' }}>
               Editar Información Personal
             </h3>
             

@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import { useUser } from "../hooks/useUserData";
+import usePeticionApi from "../hooks/PeticionApi";
 
 // ENVs
 const apiKey = import.meta.env.VITE_API_KEY;
@@ -19,24 +20,7 @@ export default function General() {
     const next = { id: Date.now(), author: "Tú", text: text.trim() };
 
     // Enviar mensaje a la API
-    try {
-      const response = await fetch("http://localhost:3000/api/posts", {
-        method: "POST",
-        headers: {
-          title: "En construcciones",
-          content: next.text,
-          author: user.user.name || "Desconocido",
-          key: apiKey,
-        },
-      });
-
-      if (response.ok) {
-        const result = await response.json();
-        console.log(result);
-      }
-    } catch (err) {
-      console.error(err);
-    }
+    usePeticionApi(next, user, apiKey);
 
     setMessages((prev) => [...prev, next]);
     setText("");
